@@ -1,3 +1,4 @@
+
 class ControleFinanceiro:
     def __init__(self):
         self.renda = 0
@@ -11,16 +12,15 @@ class ControleFinanceiro:
 
     def calcular_balanco(self):
         total_despesas = sum(montante for _, montante in self.despesas)
-        balanco = self.renda - total_despesas
-        return balanco
+        return self.renda - total_despesas
 
     def sumario(self):
         balanco = self.calcular_balanco()
-        print("Renda: ${:.2f}".format(self.renda))
+        print(f"Renda: ${self.renda:.2f}")
         print("Despesas:")
         for categoria, montante in self.despesas:
-            print("- {}: ${:.2f}".format(categoria, montante))
-        print("Balanço: ${:.2f}".format(balanco))
+            print(f"- {categoria}: ${montante:.2f}")
+        print(f"Balanço: ${balanco:.2f}")
 
 
 def main():
@@ -29,9 +29,8 @@ def main():
     while True:
         print("\nControle Financeiro")
         print("1. Adicione Renda")
-        print("2. Adicione Despesa")4
-
-        print("3. Sumario")
+        print("2. Adicione Despesa")
+        print("3. Sumário")
         print("4. Sair")
 
         escolha = input("Escreva sua escolha: ")
@@ -51,7 +50,7 @@ def main():
             print("Encerrando programa.")
             break
         else:
-            print("Escolha invalida. Por favor tente de novo.")
+            print("Escolha inválida. Por favor, tente novamente.")
 
 
 if __name__ == "__main__":
